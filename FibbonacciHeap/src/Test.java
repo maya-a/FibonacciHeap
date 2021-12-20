@@ -587,8 +587,6 @@ public class Test {
         String test = "test20";
         fibonacciHeap = new FibonacciHeap();
 
-
-
         fibonacciHeap.insert(4);
         FibonacciHeap.HeapNode node5 = fibonacciHeap.insert(5);
         FibonacciHeap.HeapNode node6 = fibonacciHeap.insert(6);

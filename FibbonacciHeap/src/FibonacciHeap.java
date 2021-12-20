@@ -88,9 +88,6 @@ public class FibonacciHeap {
         }
     }
 
-    private void insertFromLeft(HeapNode root) {
-
-    }
 
     /**
      * public void deleteMin()
@@ -303,8 +300,8 @@ public class FibonacciHeap {
      *
      */
     public int[] countersRep() {
-        int counterSize = (int) (Math.log(size) / Math.log(2));
-        int[] counter = new int[counterSize];
+        int counterSize = (int) (1.4404*(Math.log(size) / Math.log(2)));
+        int[] counter = new int[counterSize + 1];
         counter[leftNode.rank]++;
         HeapNode x = leftNode.next;
         while (x.getKey() != leftNode.getKey()) {
@@ -357,7 +354,7 @@ public class FibonacciHeap {
         x.prev.next = x.next;
         x.next.prev = x.prev;
 
-        HeapNode last =  leftNode.prev;
+        HeapNode last = leftNode.prev;
         last.next = x;
         x.prev = last;
         x.next = leftNode;
@@ -372,9 +369,10 @@ public class FibonacciHeap {
 
     private  void cascadingCut(HeapNode x, HeapNode parent) {
         cut(x,parent);
-        if (parent.parent != null) {
+        if (parent.parent != null) { //parent is not root
             if (!parent.mark) {
                 parent.mark = true;
+                markedNodes++;
             } else {
                 cascadingCut(parent,parent.parent);
             }
@@ -467,17 +465,18 @@ public class FibonacciHeap {
         int[] keyArray = new int[k];
 
         HeapNode x = H.minNode;
+        x.info = x;
         HeapNode y;
         for (int i = 0; i < k; i++) {
             keyArray[i] = x.getKey();
-            if (x.child != null) {
-                y = x.child;
+            if (x.info.child != null) {
+                y = x.info.child;
                 do {
                     minHeap.insert(y.getKey());
                     minHeap.leftNode.info = y;
                     y = y.next;
                 }
-                while (y.getKey() != x.child.getKey());
+                while (y.getKey() != x.info.child.getKey());
             }
             x = minHeap.findMin();
             minHeap.deleteMin();
