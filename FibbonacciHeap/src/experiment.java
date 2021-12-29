@@ -1,6 +1,10 @@
 public class experiment {
     public static void main(String[] args) {
 
+        /**
+         * Q1
+         /*
+
         FibonacciHeap fibonacciHeap = new FibonacciHeap();
         int[] mArray = {10,15,20,25};
         for (int M : mArray) {
@@ -15,13 +19,60 @@ public class experiment {
                 int p = (int)(m-Math.pow(2,j)) + 1;
                 fibonacciHeap.decreaseKey(keys[p + 1],m+1);
             }
-            double endTime   = System.nanoTime();
+            //f - added line #4
+            //fibonacciHeap.decreaseKey(keys[m-1],m+1);
+            double endTime = System.nanoTime();
             double totalTime = Math.pow(10,-6)*(endTime - startTime);
-            System.out.println("for M = "+M);
+            System.out.println("for M = "+ M);
             System.out.println("Run-time "+totalTime);
             System.out.println("Total links "+ FibonacciHeap.totalLinks());
             System.out.println("Total cuts "+ FibonacciHeap.totalCuts());
             System.out.println("Potential "+ fibonacciHeap.potential());
         }
+        /**
+         * Q2
+         */
+        double startTime = System.nanoTime();
+        //int i = 14;
+        int m = 12;
+        FibonacciHeap fibonacciHeap = new FibonacciHeap();
+        for (int j = 0; j < m+1; j++) {
+            fibonacciHeap.insert(j);
+        }
+        for (int j = 1; j <= (3*m/4); j++) {
+            fibonacciHeap.deleteMin();
+        }
+        double endTime = System.nanoTime();
+        double totalTime = Math.pow(10,-6)*(endTime - startTime);
+        System.out.println("for m = " + m);
+        System.out.println("Run-time "+totalTime);
+        System.out.println("Total links "+ FibonacciHeap.totalLinks());
+        System.out.println("Total cuts "+ FibonacciHeap.totalCuts());
+        System.out.println("Potential "+ fibonacciHeap.potential());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

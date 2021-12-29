@@ -6,7 +6,7 @@ public class myTests {
     public static void main(String[] args) {
         /**
          * test 29
-         */
+
         FibonacciHeap fibonacciHeap = new FibonacciHeap();
         int size = 1024;
         for (int i = size; i >= 0; i--) {
@@ -29,35 +29,35 @@ public class myTests {
             fibonacciHeap.deleteMin();
         }
         System.out.println("you're good");
-
+        */
         /**
          * test 20
          */
-//        FibonacciHeap fibonacciHeap = new FibonacciHeap();
-//        fibonacciHeap.insert(4);
-//        FibonacciHeap.HeapNode node5 = fibonacciHeap.insert(5);
-//        FibonacciHeap.HeapNode node6 = fibonacciHeap.insert(6);
-//        fibonacciHeap.deleteMin();
-//
-//        fibonacciHeap.insert(1);
-//        fibonacciHeap.insert(2);
-//        fibonacciHeap.insert(3);
-//        fibonacciHeap.deleteMin();
-//
-//        fibonacciHeap.insert(1);
-//        fibonacciHeap.deleteMin();
-//
-//        int cuts = FibonacciHeap.totalCuts();
-//        int links = FibonacciHeap.totalLinks();
-//
-//        fibonacciHeap.decreaseKey(node6, 2);
-//        fibonacciHeap.decreaseKey(node5, 1);
-//
-//        System.out.println(fibonacciHeap.markedNodes); // = 1
-//        System.out.println(fibonacciHeap.trees); // = 2
-//        System.out.println(fibonacciHeap.potential()); // = 4
-//        System.out.println(FibonacciHeap.totalCuts() - cuts); //= 1
-//        System.out.println(FibonacciHeap.totalLinks() - links); //= 0)
+        FibonacciHeap fibonacciHeap = new FibonacciHeap();
+        fibonacciHeap.insert(4);
+        FibonacciHeap.HeapNode node5 = fibonacciHeap.insert(5);
+        FibonacciHeap.HeapNode node6 = fibonacciHeap.insert(6);
+        fibonacciHeap.deleteMin();
+
+        fibonacciHeap.insert(1);
+        fibonacciHeap.insert(2);
+        fibonacciHeap.insert(3);
+        fibonacciHeap.deleteMin();
+
+        fibonacciHeap.insert(1);
+        fibonacciHeap.deleteMin();
+
+        int cuts = FibonacciHeap.totalCuts();
+        int links = FibonacciHeap.totalLinks();
+
+        fibonacciHeap.decreaseKey(node6, 2);
+        fibonacciHeap.decreaseKey(node5, 1);
+
+        System.out.println(fibonacciHeap.markedNodes); // = 1
+        System.out.println(fibonacciHeap.trees); // = 2
+        System.out.println(fibonacciHeap.potential()); // = 4
+        System.out.println(FibonacciHeap.totalCuts() - cuts); //= 1
+        System.out.println(FibonacciHeap.totalLinks() - links); //= 0)
          /** test0
          */
 //        int size = 1000;

@@ -848,7 +848,6 @@ public class Test {
         }
     }
 
-
     static void bugFound (String test) {
         System.out.println("Bug found in " + test);
         grade -= testScore;
